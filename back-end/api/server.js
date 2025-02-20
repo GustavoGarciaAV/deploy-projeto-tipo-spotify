@@ -1,3 +1,9 @@
+// API significa Application Programming Interface
+// POST, GET, PUT, DELETE
+// CRUD - Create Read Update Delete
+// Endpoint
+// Middleware
+
 import express from "express";
 import cors from "cors";
 import { db } from "./connect.js";
@@ -9,9 +15,10 @@ const app = express();
 const PORT = 3001;
 
 app.use(cors());
+// app.use(express.json());
 
 app.get("/api/", (request, response) => {
-  response.send("Olá, mundo, atualização desnecessária");
+  response.send("Só vamos trabalhar com os endpoints '/artists' e '/songs'");
 });
 
 app.get("/api/artists", async (request, response) => {
@@ -29,5 +36,5 @@ app.get("*", async (request, response) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`servidor está escutando ${PORT}`);
+  console.log(`Servidor está escutando na porta ${PORT}`);
 });
